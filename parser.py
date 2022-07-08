@@ -40,4 +40,4 @@ while i < len(currency):
         j += 1
     i += 1
 
-print('\n'.join(r))
+# print('\n'.join(r))
