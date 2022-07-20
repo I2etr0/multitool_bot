@@ -40,7 +40,7 @@ def menu(message):
         bot.send_message(message.chat.id, 'Выбери день:'.format(message.from_user), reply_markup=markup)
 
     elif message.text == 'Сегодня':
-        bot.send_message(message.chat.id, f"{message.text}:\n" + str(weather_parser.Today.other.r[0][0:80]))
+        bot.send_message(message.chat.id, f"{message.text}:\n" + str(weather_parser.Today.today.r[0][0:80]))
 
     elif message.text == 'Завтра':
         bot.send_message(message.chat.id, f"{message.text}:\n" + str(weather_parser.Other_days.other.r[1][0:80]))
