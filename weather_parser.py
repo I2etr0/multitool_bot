@@ -7,7 +7,7 @@ response = requests.get(url)
 soup = bs(response.text, 'html.parser')
 
 
-# Parser "today"
+# Class - draft for other parser's classes
 class Parser:
     def parser(self, site, current_day, mass, current, day_wk, nmbrDay, month, wtDay, wtNight, res, result, currency):
         self.current_day = current_day
@@ -40,9 +40,9 @@ class Parser:
                 self.r.append(self.currency[self.i])
                 self.j += 1
             self.i += 1
-        # End "today's" parser
 
 
+# Parser for currency day (Today)
 class Today(Parser):
     today = Parser()
 
@@ -80,6 +80,7 @@ class Today(Parser):
     # print('\n'.join(today.r))
 
 
+# Parser for otger day
 class Other_days(Parser):
     other = Parser()
 
