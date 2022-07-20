@@ -3,7 +3,7 @@ import weather_parser
 import telebot
 from telebot import types
 
-TOKEN = "5417008537:AAFJinudA_4-BrwFv0xaVlpXWXPS6DDBUYI"
+TOKEN = "token"
 bot = telebot.TeleBot(TOKEN)
 
 
