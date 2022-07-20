@@ -5,4 +5,4 @@ Hello! As we all know - on February 24, at 5 am, the president of my country, wh
 #helpUkraine
 
 
-![](https://komarev.com/ghpvc/?username=I2etr0)
+![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=I2etr0&theme=vue)
