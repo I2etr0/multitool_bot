@@ -1,6 +1,6 @@
 FROM python:buster
 
-LABEL org.opencontainers.image.authors="yyaroslav43@gmail.com"
+LABEL org.opencontainers.image.authors="I2etr0"
 
 # create work direcory for app
 RUN mkdir /app
