@@ -1,6 +1,5 @@
 import password
 import currency_parser
-import weather_parser
 import telebot
 from telebot import types
 
