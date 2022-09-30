@@ -30,25 +30,6 @@ def menu(message):
 
         bot.send_message(message.chat.id, 'Выбери валюту:'.format(message.from_user), reply_markup=markup)
 
-    elif message.text == 'Погода':
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        today = types.KeyboardButton('Сегодня')
-        tomorrow = types.KeyboardButton('Завтра')
-        tomorrow_x2 = types.KeyboardButton('Послезавтра')
-        back = types.KeyboardButton('Назад')
-        markup.add(today, tomorrow, tomorrow_x2, back)
-
-        bot.send_message(message.chat.id, 'Выбери день:'.format(message.from_user), reply_markup=markup)
-
-    elif message.text == 'Сегодня':
-        bot.send_message(message.chat.id, f"{message.text}:\n" + str(weather_parser.Today.today.r[0][0:80]))
-
-    elif message.text == 'Завтра':
-        bot.send_message(message.chat.id, f"{message.text}:\n" + str(weather_parser.Other_days.other.r[1][0:80]))
-
-    elif message.text == 'Послезавтра':
-        bot.send_message(message.chat.id, f"{message.text}:\n" + str(weather_parser.Other_days.other.r[2][0:80]))
-
     elif message.text == 'Доллар':
         bot.send_message(message.chat.id, f"{message.text}: " + str(currency_parser.r[0][-7:] + f' на {currency_parser.date[-13:]}'))
 
