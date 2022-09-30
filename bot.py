@@ -1,9 +1,9 @@
-import password
+import token
 import currency_parser
 import telebot
 from telebot import types
 
-TOKEN = password.token
+TOKEN = token.token
 bot = telebot.TeleBot(TOKEN)
 
 
