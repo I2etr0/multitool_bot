@@ -1,4 +1,3 @@
-import token
 import template
 import telebot
 from telebot import types
@@ -20,18 +19,6 @@ def start(message):
         if message.text == 'Тенге':
             bot.send_message(message.chat.id,
                              str(f'Сегодня {template.date} \n{template.tenge[0:3]}₸: {template.tenge[24:29]}₽'))
-
-    # elif message.text == 'Доллар':
-    #     bot.send_message(message.chat.id,
-    #                      f"{message.text}: " + str(currency_parser.r[0][-7:] + f' на {currency_parser.date[-13:]}'))
-    #
-    # elif message.text == 'Евро':
-    #     bot.send_message(message.chat.id,
-    #                      f"{message.text}: " + str(currency_parser.r[1][-7:] + f' на {currency_parser.date[-13:]}'))
-    #
-    # elif message.text == 'Грузинский Лари':
-    #     bot.send_message(message.chat.id,
-    #                      f"{message.text}: " + str(currency_parser.r[66][-7:] + f' на {currency_parser.date[-13:]}'))
 
 
 bot.polling(none_stop=True)
