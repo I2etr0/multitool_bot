@@ -1,5 +1,5 @@
 import token
-import currency_parser
+import template
 import telebot
 from telebot import types
 
@@ -10,12 +10,16 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands='start')
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    usd = types.KeyboardButton('Доллар')
-    eur = types.KeyboardButton('Евро')
-    gel = types.KeyboardButton('Грузинский Лари')
-    markup.add(usd, eur, gel)
+    kzt = types.KeyboardButton('Тенге')
+    markup.add(kzt)
 
     bot.send_message(message.chat.id, 'Привет, {0.first_name}!'.format(message.from_user), reply_markup=markup)
+
+    @bot.message_handler(content_types='text')
+    def menu(message):
+        if message.text == 'Тенге':
+            bot.send_message(message.chat.id,
+                             str(f'Сегодня {template.date} \n{template.tenge[0:3]}₸: {template.tenge[24:29]}₽'))
 
     # elif message.text == 'Доллар':
     #     bot.send_message(message.chat.id,
@@ -28,15 +32,6 @@ def start(message):
     # elif message.text == 'Грузинский Лари':
     #     bot.send_message(message.chat.id,
     #                      f"{message.text}: " + str(currency_parser.r[66][-7:] + f' на {currency_parser.date[-13:]}'))
-
-    if message.text == 'Доллар':
-        bot.send_message(message.chat.id, f"{message.text}: ")
-
-    elif message.text == 'Евро':
-        bot.send_message(message.chat.id, f"{message.text}: ")
-
-    elif message.text == 'Грузинский Лари':
-        bot.send_message(message.chat.id, f"{message.text}: ")
 
 
 bot.polling(none_stop=True)
