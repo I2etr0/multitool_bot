@@ -14,11 +14,11 @@ def start(message):
 
     bot.send_message(message.chat.id, 'Привет, {0.first_name}!'.format(message.from_user), reply_markup=markup)
 
-    @bot.message_handler(content_types='text')
-    def menu(message):
-        if message.text == 'Тенге':
-            bot.send_message(message.chat.id,
-                             str(f'Сегодня {template.date} \n{template.tenge[0:3]}₸: {template.tenge[24:29]}₽'))
+@bot.message_handler(content_types='text')
+def menu(message):
+    if message.text == 'Тенге':
+        bot.send_message(message.chat.id,
+                         str(f'Сегодня {template.date} \n{template.tenge[0:3]}₸: {template.tenge[24:29]}₽'))
 
 
 bot.polling(none_stop=True)
